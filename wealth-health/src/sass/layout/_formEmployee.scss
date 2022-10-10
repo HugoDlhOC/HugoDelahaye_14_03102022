@@ -1,0 +1,9 @@
+.create-employee {
+  .create-employee--container-one,
+  .create-employee--container-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

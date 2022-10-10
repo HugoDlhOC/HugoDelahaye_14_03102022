@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/layout/_body.scss","../sass/pages/_home.scss","../sass/layout/_formEmployee.scss"],"names":[],"mappings":"AAAA;AAAA;AAAA;EAGE;EACA;EACA;;;ACLF;EACE;EACA;EACA;EACA;;;ACHA;AAAA;EAEE;EACA;EACA;EACA","file":"style.css"}
