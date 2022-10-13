@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import CurrentEmployees from "./pages/CurrentEmployees";
-import { homePage, employeesPage } from "./assets/routes/routes";
+import { homePage, employeesPage } from "./routes/routes";
 import { useState } from "react";
 import UserContextProvider from "./context/UserContext";
 

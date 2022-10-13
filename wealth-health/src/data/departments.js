@@ -1,18 +1,23 @@
 const departments = [
   {
-    name: "Sales",
+    label: "Sales",
+    value: "Sales",
   },
   {
-    name: "Marketing",
+    label: "Marketing",
+    value: "Marketing",
   },
   {
-    name: "Engineering",
+    label: "Engineering",
+    value: "Engineering",
   },
   {
-    name: "Human Ressources",
+    label: "Human Ressources",
+    value: "Human-ressources",
   },
   {
-    name: "Legal",
+    label: "Legal",
+    value: "Legal",
   },
 ];
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { employeesPage } from "../../assets/routes/routes";
+import { employeesPage } from "../../routes/routes";
 import FormEmployee from "../../components/FormEmployee";
 
 const Home = () => {

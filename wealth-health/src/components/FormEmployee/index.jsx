@@ -1,82 +1,142 @@
-import { Form, Formik } from "formik";
+import { Form, Formik, useFormik } from "formik";
 import DropDownMenuComponent from "../DropDownMenuComponent";
 import states from "../../data/states";
 import departments from "../../data/departments";
 import ModalComponent from "../ModalComponent";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
-import FakeComponant from "../FakeComponant";
+import FakeComponent from "../FakeComponent";
+import Select from "react-select";
 
 const FormEmployee = () => {
   const [modal, setModal] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const { dispatch } = useContext(UserContext);
 
-  const onChangeFirstName = (e) => {
-    setFirstName(e.target.value);
-  };
-
-  const onChangeLastName = (e) => {
-    setLastName(e.target.value);
-  };
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      dataOfBirth: "",
+      startDate: "",
+      street: "",
+      state: "",
+      city: "",
+      zipCode: "",
+      department: "",
+    },
+    onSubmit: (values) => {
+      setModal(true);
+      dispatch({
+        type: "ADD_EMPLOYEE",
+        user: {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          dateOfBirth: values.dateOfBirth,
+          startDate: values.startDate,
+          street: values.street,
+          state: values.state,
+          city: values.city,
+          zipCode: values.zipCode,
+          department: values.department,
+        },
+      });
+    },
+  });
 
   return (
     <div>
-      <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          dataOfBirth: "",
-          startDate: "",
-          street: "",
-          city: "",
-          state: "",
-          zipCode: "",
-        }}
-        onSubmit={(values) => {
-          setModal(true);
-          alert(JSON.stringify(values.firstName, null, 2));
-          dispatch({ type: "ADD_EMPLOYEE", user: { firstName, lastName } });
-        }}
-      >
-        <Form className={"create-employee"}>
-          <div className={"create-employee--container-one"}>
-            <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" onChange={onChangeFirstName} />
+      <form className={"create-employee"} onSubmit={formik.handleSubmit}>
+        <div className={"create-employee--container-one"}>
+          <label htmlFor="firstName">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            onChange={formik.handleChange}
+            name={"firstName"}
+            value={formik.values.firstName}
+          />
 
-            <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" onChange={onChangeLastName} />
+          <label htmlFor="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            onChange={formik.handleChange}
+            name="lastName"
+            value={formik.values.lastName}
+          />
 
-            <label htmlFor="dateOfBirth">Date of Birth</label>
-            <input id="dateOfBirth" type="text" />
+          <label htmlFor="dateOfBirth">Date of Birth</label>
+          <input
+            id="dateOfBirth"
+            type="date"
+            name="dateOfBirth"
+            onChange={formik.handleChange}
+            value={formik.values.dateOfBirth}
+          />
 
-            <label htmlFor="startDate">Start Date</label>
-            <input id="startDate" type="text" />
-          </div>
+          <label htmlFor="startDate">Start Date</label>
+          <input
+            id="startDate"
+            type="date"
+            name="startDate"
+            onChange={formik.handleChange}
+            value={formik.values.startDate}
+          />
+        </div>
 
-          <fieldset className="create-employee--container-two">
-            <legend>Address</legend>
+        <fieldset className="create-employee--container-two">
+          <legend>Address</legend>
 
-            <label htmlFor="street">Street</label>
-            <input id="street" type="text" />
+          <label htmlFor="street">Street</label>
+          <input
+            id="street"
+            type="text"
+            name="street"
+            onChange={formik.handleChange}
+            value={formik.values.street}
+          />
 
-            <label htmlFor="city">City</label>
-            <input id="city" type="text" />
+          <label htmlFor="city">City</label>
+          <input
+            id="city"
+            type="text"
+            name="city"
+            onChange={formik.handleChange}
+            value={formik.values.city}
+          />
 
-            <label htmlFor="state">State</label>
-            <DropDownMenuComponent data={states} />
+          <label htmlFor="state">State</label>
+          {/*DropMenu*/}
+          <Select
+            onChange={(value) => formik.setFieldValue("state", value.value)}
+            options={states}
+            isSearchable={false}
+            isClearable={false}
+          />
 
-            <label htmlFor="zipCode">Zip Code</label>
-            <input id="zipCode" type="number" />
-            <label htmlFor="department">Department</label>
-            <DropDownMenuComponent data={departments} />
-            <button type={"submit"}>Save</button>
-          </fieldset>
-        </Form>
-      </Formik>
+          <label htmlFor="zipCode">Zip Code</label>
+          <input
+            id="zipCode"
+            type="number"
+            name="zipCode"
+            onChange={formik.handleChange}
+            value={formik.values.zipCode}
+          />
+          <label htmlFor="department">Department</label>
+          {/*DropMenu*/}
+          <Select
+            onChange={(value) =>
+              formik.setFieldValue("department", value.value)
+            }
+            options={departments}
+            isSearchable={false}
+            isClearable={false}
+          />
+          <button type={"submit"}>Save</button>
+        </fieldset>
+      </form>
       <ModalComponent state={modal} setModal={setModal}></ModalComponent>
-      <FakeComponant />
+      <FakeComponent />
     </div>
   );
 };
