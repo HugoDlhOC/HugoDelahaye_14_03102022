@@ -1,3 +1,7 @@
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
 *,
 ::before,
 ::after {
@@ -6,19 +10,97 @@
   padding: 0;
 }
 
-.main-infos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body {
+  background-color: #d7d5d5;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  /*background-color: #afaeae;*/
+  background-color: #564949;
+  border-radius: 0px 0px 5px 5px;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+header h1 {
+  color: white;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+.create-employee {
+  max-width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.create-employee h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #564949;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+.create-employee input {
+  width: 200px;
+  height: 40px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 2px solid #564949;
+}
+.create-employee label {
+  font-size: 15px;
+}
+.create-employee .create-employee--select {
+  width: 200px;
+  margin-bottom: 15px;
+}
 .create-employee .create-employee--container-one,
 .create-employee .create-employee--container-two {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+}
+.create-employee .create-employee--submit {
+  width: 100px;
+  height: 40px;
+  background-color: #d7d5d5;
+  border-radius: 5px;
+  border: 2px #564949 solid;
+  font-size: 15px;
+  margin: 10px auto 10px auto;
+}
+
+.link-to-home {
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 15px;
+  border: 2px solid #564949;
+  background-color: #564949;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

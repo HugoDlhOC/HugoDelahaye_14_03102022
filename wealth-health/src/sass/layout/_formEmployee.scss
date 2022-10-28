@@ -1,9 +1,58 @@
 .create-employee {
+  max-width: 450px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #564949;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+  }
+
+  input {
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid #564949;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  .create-employee--select {
+    width: 200px;
+    margin-bottom: 15px;
+  }
+
   .create-employee--container-one,
   .create-employee--container-two {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .create-employee--submit {
+    width: 100px;
+    height: 40px;
+    background-color: #d7d5d5;
+    border-radius: 5px;
+    border: 2px #564949 solid;
+    font-size: 15px;
+    margin: 10px auto 10px auto;
   }
 }

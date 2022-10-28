@@ -5,7 +5,6 @@ import departments from "../../data/departments";
 import ModalComponent from "../ModalComponent";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
-import FakeComponent from "../FakeComponent";
 import Select from "react-select";
 
 const FormEmployee = () => {
@@ -46,7 +45,9 @@ const FormEmployee = () => {
   return (
     <div>
       <form className={"create-employee"} onSubmit={formik.handleSubmit}>
-        <div className={"create-employee--container-one"}>
+        <h2>Create Employee</h2>
+        <fieldset className={"create-employee--container-one"}>
+          <legend>Main infos</legend>
           <label htmlFor="firstName">First Name</label>
           <input
             type="text"
@@ -82,11 +83,10 @@ const FormEmployee = () => {
             onChange={formik.handleChange}
             value={formik.values.startDate}
           />
-        </div>
+        </fieldset>
 
         <fieldset className="create-employee--container-two">
           <legend>Address</legend>
-
           <label htmlFor="street">Street</label>
           <input
             id="street"
@@ -106,12 +106,12 @@ const FormEmployee = () => {
           />
 
           <label htmlFor="state">State</label>
-          {/*DropMenu*/}
           <Select
             onChange={(value) => formik.setFieldValue("state", value.value)}
             options={states}
             isSearchable={false}
             isClearable={false}
+            className={"create-employee--select"}
           />
 
           <label htmlFor="zipCode">Zip Code</label>
@@ -123,7 +123,6 @@ const FormEmployee = () => {
             value={formik.values.zipCode}
           />
           <label htmlFor="department">Department</label>
-          {/*DropMenu*/}
           <Select
             onChange={(value) =>
               formik.setFieldValue("department", value.value)
@@ -131,12 +130,14 @@ const FormEmployee = () => {
             options={departments}
             isSearchable={false}
             isClearable={false}
+            className={"create-employee--select"}
           />
-          <button type={"submit"}>Save</button>
         </fieldset>
+        <button className={"create-employee--submit"} type={"submit"}>
+          Save
+        </button>
       </form>
       <ModalComponent state={modal} setModal={setModal}></ModalComponent>
-      <FakeComponent />
     </div>
   );
 };

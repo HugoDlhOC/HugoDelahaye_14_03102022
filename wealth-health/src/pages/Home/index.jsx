@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
-import { employeesPage } from "../../routes/routes";
+import { employeesPage, homePage } from "../../routes/routes";
 import FormEmployee from "../../components/FormEmployee";
 
 const Home = () => {
   return (
     <div>
-      <div className={"main-infos"}>
-        <h1>HRnet</h1>
+      <header>
+        <Link to={homePage}>
+          <h1>HRnet</h1>
+        </Link>
         <Link to={employeesPage}>View Current Employees</Link>
-        <h2>Create Employee</h2>
-      </div>
+      </header>
       <FormEmployee />
     </div>
   );
