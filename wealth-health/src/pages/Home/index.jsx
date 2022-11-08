@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
-import { employeesPage, homePage } from "../../routes/routes";
 import FormEmployee from "../../components/FormEmployee";
 import Header from "../../components/Header";
 
+/**
+ * This component represents the home page with the employees creation form.
+ * @returns JSX
+ */
 const Home = () => {
   return (
     <div>

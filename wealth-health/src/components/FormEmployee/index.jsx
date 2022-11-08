@@ -1,5 +1,4 @@
-import { Form, Formik, useFormik } from "formik";
-import DropDownMenuComponent from "../DropDownMenuComponent";
+import { useFormik } from "formik";
 import states from "../../data/states";
 import departments from "../../data/departments";
 import ModalComponent from "../ModalComponent";
@@ -7,6 +6,10 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import Select from "react-select";
 
+/**
+ * This component represents the entire employee registration form.
+ * @returns JSX
+ */
 const FormEmployee = () => {
   const [modal, setModal] = useState(false);
   const { dispatch } = useContext(UserContext);
@@ -23,7 +26,7 @@ const FormEmployee = () => {
       zipCode: "",
       department: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       setModal(true);
       dispatch({
         type: "ADD_EMPLOYEE",
@@ -39,6 +42,7 @@ const FormEmployee = () => {
           department: values.department,
         },
       });
+      resetForm();
     },
   });
 

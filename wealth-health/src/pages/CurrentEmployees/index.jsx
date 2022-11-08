@@ -1,8 +1,12 @@
 import DataTableComponent from "../../components/DataTableComponent";
 import { Link } from "react-router-dom";
-import { employeesPage, homePage } from "../../routes/routes";
+import { homePage } from "../../routes/routes";
 import Header from "../../components/Header";
 
+/**
+ * This component represents the page of the created employees.
+ * @returns JSX
+ */
 const CurrentEmployees = () => {
   return (
     <div>

@@ -2,6 +2,10 @@ import MaterialTable from "material-table";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
+/**
+ * This component represents the table where user data is displayed
+ * @returns JSX
+ */
 const DataTableComponent = () => {
   const { users } = useContext(UserContext);
   const dataMaterialTable = [];
@@ -24,15 +28,15 @@ const DataTableComponent = () => {
       <MaterialTable
         title="Current Employees"
         columns={[
-          { title: "First Name", field: "firstName" },
-          { title: "Last Name", field: "lastName" },
+          { title: "First Name", field: "firstName", type: "string" },
+          { title: "Last Name", field: "lastName", type: "string" },
           { title: "Start Date", field: "startDate", type: "date" },
-          { title: "Department", field: "department" },
+          { title: "Department", field: "department", type: "string" },
           { title: "Date of Birth", field: "dateOfBirth", type: "date" },
-          { title: "Street", field: "street" },
-          { title: "City", field: "city" },
-          { title: "State", field: "state" },
-          { title: "Zip Code", field: "zipCode" },
+          { title: "Street", field: "street", type: "string" },
+          { title: "City", field: "city", type: "string" },
+          { title: "State", field: "state", type: "string" },
+          { title: "Zip Code", field: "zipCode", type: "numeric" },
         ]}
         data={dataMaterialTable}
         options={{
