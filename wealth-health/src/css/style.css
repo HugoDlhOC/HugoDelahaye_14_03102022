@@ -54,7 +54,7 @@ header a {
   color: white;
   padding: 10px;
 }
-.create-employee input {
+.create-employee .input-form {
   width: 200px;
   height: 40px;
   font-size: 15px;
@@ -77,14 +77,26 @@ header a {
   align-items: center;
   margin-bottom: 10px;
 }
-.create-employee .create-employee--submit {
-  width: 100px;
+.create-employee .create-employee--submit, .create-employee #input-calendar {
+  width: 200px;
   height: 40px;
-  background-color: #d7d5d5;
-  border-radius: 5px;
-  border: 2px #564949 solid;
   font-size: 15px;
-  margin: 10px auto 10px auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 2px solid #564949;
+}
+.create-employee .create-employee--submit {
+  align-self: center;
+}
+.create-employee .date-picker {
+  display: flex;
+  flex-direction: column;
+}
+.create-employee .date-picker .calendar {
+  top: 60px;
+}
+.create-employee .date-picker .name-day-week {
+  background-color: #564949;
 }
 
 .link-to-home {

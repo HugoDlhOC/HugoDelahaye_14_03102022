@@ -5,10 +5,12 @@ import ModalComponent from "../ModalComponent";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import Select from "react-select";
+import "@hugo.delahaye53/react-datepicker/dist/cjs/styles/style.css";
+import {Calendar} from "@hugo.delahaye53/react-datepicker";
 
 /**
  * This component represents the entire employee registration form.
- * @returns JSX
+ * @returns JSX.Element
  */
 const FormEmployee = () => {
   const [modal, setModal] = useState(false);
@@ -59,6 +61,7 @@ const FormEmployee = () => {
             onChange={formik.handleChange}
             name={"firstName"}
             value={formik.values.firstName}
+            className={"input-form"}
           />
 
           <label htmlFor="lastName">Last Name</label>
@@ -68,25 +71,12 @@ const FormEmployee = () => {
             onChange={formik.handleChange}
             name="lastName"
             value={formik.values.lastName}
+            className={"input-form"}
           />
 
-          <label htmlFor="dateOfBirth">Date of Birth</label>
-          <input
-            id="dateOfBirth"
-            type="date"
-            name="dateOfBirth"
-            onChange={formik.handleChange}
-            value={formik.values.dateOfBirth}
-          />
+          <Calendar languageChoice={"fr"} yearMin={2001} yearMax={2030} returnFormat={"dd/MM/yyyy"} defaultDate={new Date()} labelContent={"Date of Birth"} classChange={"date-picker"}/>
+          <Calendar languageChoice={"fr"} yearMin={2001} yearMax={2030} returnFormat={"dd/MM/yyyy"} defaultDate={new Date()} labelContent={"Start Date"} classChange={"date-picker"}/>
 
-          <label htmlFor="startDate">Start Date</label>
-          <input
-            id="startDate"
-            type="date"
-            name="startDate"
-            onChange={formik.handleChange}
-            value={formik.values.startDate}
-          />
         </fieldset>
 
         <fieldset className="create-employee--container-two">
@@ -98,6 +88,7 @@ const FormEmployee = () => {
             name="street"
             onChange={formik.handleChange}
             value={formik.values.street}
+            className={"input-form"}
           />
 
           <label htmlFor="city">City</label>
@@ -107,6 +98,7 @@ const FormEmployee = () => {
             name="city"
             onChange={formik.handleChange}
             value={formik.values.city}
+            className={"input-form"}
           />
 
           <label htmlFor="state">State</label>
@@ -116,6 +108,8 @@ const FormEmployee = () => {
             isSearchable={false}
             isClearable={false}
             className={"create-employee--select"}
+            id={"state"}
+            aria-label={"state"}
           />
 
           <label htmlFor="zipCode">Zip Code</label>
@@ -125,6 +119,7 @@ const FormEmployee = () => {
             name="zipCode"
             onChange={formik.handleChange}
             value={formik.values.zipCode}
+            className={"input-form"}
           />
           <label htmlFor="department">Department</label>
           <Select
@@ -135,6 +130,8 @@ const FormEmployee = () => {
             isSearchable={false}
             isClearable={false}
             className={"create-employee--select"}
+            id={"department"}
+            aria-label={"department"}
           />
         </fieldset>
         <button className={"create-employee--submit"} type={"submit"}>

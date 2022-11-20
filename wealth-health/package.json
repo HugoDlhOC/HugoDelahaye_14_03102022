@@ -7,7 +7,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@hugo.delahaye53/react-datepicker": "^0.1.6",
+    "@hugo.delahaye53/react-datepicker": "^0.3.7",
     "@material-ui/core": "4.2.1",
     "@material-ui/icons": "^4.11.3",
     "@testing-library/jest-dom": "^5.16.5",

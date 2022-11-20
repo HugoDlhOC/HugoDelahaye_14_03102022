@@ -1367,10 +1367,10 @@
   dependencies:
     "prop-types" "^15.8.1"
 
-"@hugo.delahaye53/react-datepicker@^0.1.6":
-  "integrity" "sha512-2fdXLFeP9IXDTfQqeM/ZTmh/0Nr8LMlDAPLjvIp/X6MdZPa8AT/f+IyV73UpeglR+LFAIGpofqKvgFkVnbEKWw=="
-  "resolved" "https://registry.npmjs.org/@hugo.delahaye53/react-datepicker/-/react-datepicker-0.1.6.tgz"
-  "version" "0.1.6"
+"@hugo.delahaye53/react-datepicker@^0.3.7":
+  "integrity" "sha512-VH39uyVG6GMQ+ZdGDGwn//OP60x8eNxcqnvfpU4RO3SBIX+4vZTVbuo1k+oTYhyfcvp5g+u3ku0n6F8lytGYqw=="
+  "resolved" "https://registry.npmjs.org/@hugo.delahaye53/react-datepicker/-/react-datepicker-0.3.7.tgz"
+  "version" "0.3.7"
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@fortawesome/fontawesome-svg-core" "^6.2.0"

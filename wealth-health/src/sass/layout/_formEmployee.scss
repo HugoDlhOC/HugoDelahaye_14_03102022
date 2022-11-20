@@ -19,7 +19,7 @@
     padding: 10px;
   }
 
-  input {
+  .input-form {
     width: 200px;
     height: 40px;
     font-size: 15px;
@@ -46,13 +46,32 @@
     margin-bottom: 10px;
   }
 
-  .create-employee--submit {
-    width: 100px;
+  .create-employee--submit, #input-calendar {
+    width: 200px;
     height: 40px;
-    background-color: #d7d5d5;
-    border-radius: 5px;
-    border: 2px #564949 solid;
     font-size: 15px;
-    margin: 10px auto 10px auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid #564949;
+  }
+
+  .create-employee--submit{
+    align-self: center;
+  }
+
+  .date-picker{
+    display: flex;
+    flex-direction: column;
+
+    .calendar{
+      top: 60px;
+    }
+
+    .name-day-week{
+      background-color: #564949;
+    }
   }
 }
+
+
+

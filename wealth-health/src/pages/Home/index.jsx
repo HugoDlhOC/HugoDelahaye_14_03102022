@@ -11,7 +11,6 @@ const Home = () => {
     <div>
       <Header itIsHomePage={true} />
       <FormEmployee />
-        <Calendar languageChoice={"fr"} yearMin={2001} yearMax={2120} returnFormat={"dd/MM/yyyy"} classToggle={"calendar"} defaultDate={new Date()}/>
     </div>
   );
 };
