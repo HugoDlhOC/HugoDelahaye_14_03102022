@@ -6,15 +6,13 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import Select from "react-select";
 import "@hugo.delahaye53/react-datepicker/dist/cjs/styles/style.css";
-import {Calendar} from "@hugo.delahaye53/react-datepicker";
+import { Calendar } from "@hugo.delahaye53/react-datepicker";
 
-/**
- * This component represents the entire employee registration form.
- * @returns JSX.Element
- */
 const FormEmployee = () => {
   const [modal, setModal] = useState(false);
   const { dispatch } = useContext(UserContext);
+  const [valueDateOfBirth, setDateOfBirth] = useState("");
+  const [valueStartDate, setStartDate] = useState("");
 
   const formik = useFormik({
     initialValues: {
@@ -35,8 +33,8 @@ const FormEmployee = () => {
         user: {
           firstName: values.firstName,
           lastName: values.lastName,
-          dateOfBirth: values.dateOfBirth,
-          startDate: values.startDate,
+          dateOfBirth: document.querySelectorAll("#input-calendar")[0].value,
+          startDate: document.querySelectorAll("#input-calendar")[1].value,
           street: values.street,
           state: values.state,
           city: values.city,
@@ -74,9 +72,28 @@ const FormEmployee = () => {
             className={"input-form"}
           />
 
-          <Calendar languageChoice={"fr"} yearMin={2001} yearMax={2030} returnFormat={"dd/MM/yyyy"} defaultDate={new Date()} labelContent={"Date of Birth"} classChange={"date-picker"}/>
-          <Calendar languageChoice={"fr"} yearMin={2001} yearMax={2030} returnFormat={"dd/MM/yyyy"} defaultDate={new Date()} labelContent={"Start Date"} classChange={"date-picker"}/>
-
+          <Calendar
+            languageChoice={"fr"}
+            yearMin={2001}
+            yearMax={2030}
+            returnFormat={"dd/MM/yyyy"}
+            defaultDate={new Date()}
+            labelContent={"Date of Birth"}
+            classChange={"date-picker"}
+            nameInput={"dateOfBirth"}
+            handleDateChanged={(value) => setDateOfBirth(value)}
+          />
+          <Calendar
+            languageChoice={"fr"}
+            yearMin={2001}
+            yearMax={2030}
+            returnFormat={"dd/MM/yyyy"}
+            defaultDate={new Date()}
+            labelContent={"Start Date"}
+            classChange={"date-picker"}
+            nameInput={"startDate"}
+            handleDateChanged={(value) => setStartDate(value)}
+          />
         </fieldset>
 
         <fieldset className="create-employee--container-two">

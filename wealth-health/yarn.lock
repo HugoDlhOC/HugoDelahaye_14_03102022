@@ -1367,10 +1367,10 @@
   dependencies:
     "prop-types" "^15.8.1"
 
-"@hugo.delahaye53/react-datepicker@^0.3.7":
-  "integrity" "sha512-VH39uyVG6GMQ+ZdGDGwn//OP60x8eNxcqnvfpU4RO3SBIX+4vZTVbuo1k+oTYhyfcvp5g+u3ku0n6F8lytGYqw=="
-  "resolved" "https://registry.npmjs.org/@hugo.delahaye53/react-datepicker/-/react-datepicker-0.3.7.tgz"
-  "version" "0.3.7"
+"@hugo.delahaye53/react-datepicker@^0.4.9":
+  "integrity" "sha512-tOReVJ1sbHnMZRmXpGYYTdAUwA7PMuctWDe8UIPwR0UVuFkfO+qVl2GLtX4Dwz7Ky9xgXtdiejy/4rdQDMwR7w=="
+  "resolved" "https://registry.npmjs.org/@hugo.delahaye53/react-datepicker/-/react-datepicker-0.4.9.tgz"
+  "version" "0.4.9"
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@fortawesome/fontawesome-svg-core" "^6.2.0"
@@ -1385,9 +1385,10 @@
     "@types/react" "^18.0.25"
     "@types/react-dom" "^18.0.8"
     "date-fns" "^2.29.3"
+    "formik" "^2.2.9"
     "prettier" "^2.7.1"
     "prop-types" "^15.8.1"
-    "react" "^18.2.0"
+    "react" ">=16"
     "react-dom" "^18.2.0"
     "react-redux" "^8.0.4"
     "react-scripts" "5.0.1"
@@ -8349,7 +8350,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^18.2.0":
+"react@^18.2.0", "react@>=16":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
