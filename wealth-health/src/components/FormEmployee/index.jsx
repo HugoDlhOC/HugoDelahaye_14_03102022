@@ -13,8 +13,8 @@ import * as Yup from "yup";
 const FormEmployee = () => {
   const [modal, setModal] = useState(false);
   const { dispatch } = useContext(UserContext);
-  const [valueDateOfBirth, setDateOfBirth] = useState("");
-  const [valueStartDate, setStartDate] = useState("");
+  const [valueDateOfBirth, setValueDateOfBirth] = useState("");
+  const [valueStartDate, setValueStartDate] = useState("");
 
   const AddUserSchema = Yup.object().shape({
     firstName: Yup.string("String!").required("First name required"),
@@ -50,8 +50,8 @@ const FormEmployee = () => {
         user: {
           firstName: values.firstName,
           lastName: values.lastName,
-          dateOfBirth: document.querySelectorAll("#input-calendar")[0].value,
-          startDate: document.querySelectorAll("#input-calendar")[1].value,
+          dateOfBirth: valueDateOfBirth,
+          startDate: valueStartDate,
           street: values.street,
           state: values.state,
           city: values.city,
@@ -60,6 +60,8 @@ const FormEmployee = () => {
         },
       });
       resetForm();
+      console.log(valueDateOfBirth);
+      console.log(valueStartDate);
     },
   });
 
@@ -104,7 +106,7 @@ const FormEmployee = () => {
             labelContent={"Date of Birth"}
             classChange={"date-picker"}
             nameInput={"dateOfBirth"}
-            handleDateChanged={(value) => setDateOfBirth(value)}
+            handleDateChanged={(value) => setValueDateOfBirth(value)}
           />
           {formik.errors.dateOfBirth && formik.touched.dateOfBirth ? (
             <p className={"error-form"}>{formik.errors.dateOfBirth}</p>
@@ -118,7 +120,7 @@ const FormEmployee = () => {
             labelContent={"Start Date"}
             classChange={"date-picker"}
             nameInput={"startDate"}
-            handleDateChanged={(value) => setStartDate(value)}
+            handleDateChanged={(value) => setValueStartDate(value)}
           />
           {formik.errors.startDate && formik.touched.startDate ? (
             <p className={"error-form"}>{formik.errors.startDate}</p>

@@ -8,14 +8,15 @@ const ShowEntriesSelect = ({ onChange, options, defaultValue }) => {
 
   return (
     <div className="select-entries-container">
-      <span>Show</span>
+      <label htmlFor={"entries-select"}>Show</label>
       <Select
-        name={"entries-select"}
+        id={"entries-select"}
         options={options}
         onChange={handleSelectOption}
         defaultValue={defaultValue}
         styles={styleSelect}
         theme={themeSelect}
+        aria-label={"entries-select"}
       />
       <span>entries</span>
     </div>

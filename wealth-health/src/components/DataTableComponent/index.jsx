@@ -74,7 +74,7 @@ const DataTableComponent = () => {
   }, []);
 
   const [columnDefs, setColumnDefs] = useState([
-    { field: "firstName", width: 150 },
+    { field: "firstName", width: 150, },
     { field: "lastName", width: 150 },
     { field: "startDate", comparator: dateComparator, width: 120 },
     { field: "department", width: 160 },
