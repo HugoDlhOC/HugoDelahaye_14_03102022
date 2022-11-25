@@ -1,0 +1,33 @@
+.data-table {
+  display: flex;
+  justify-content: center;
+  .data-table--header {
+    display: flex;
+    justify-content: space-between;
+
+    .select-entries-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .select-entries-container > * {
+      padding: 5px;
+    }
+
+    input {
+      margin: 5px;
+      border: 1px solid #564949;
+      border-radius: 5px;
+      font-size: 15px;
+      padding: 5px;
+    }
+
+    input::placeholder {
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: 1px solid #564949;
+    }
+  }
+}

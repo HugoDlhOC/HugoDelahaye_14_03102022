@@ -56,18 +56,17 @@ header a {
 }
 .create-employee .input-form {
   width: 200px;
-  height: 40px;
+  height: 34px;
   font-size: 15px;
-  margin-bottom: 15px;
   border-radius: 5px;
   border: 2px solid #564949;
+  padding: 5px;
 }
 .create-employee label {
   font-size: 15px;
 }
 .create-employee .create-employee--select {
   width: 200px;
-  margin-bottom: 15px;
 }
 .create-employee .create-employee--container-one,
 .create-employee .create-employee--container-two {
@@ -77,16 +76,21 @@ header a {
   align-items: center;
   margin-bottom: 10px;
 }
-.create-employee .create-employee--submit, .create-employee #input-calendar {
+.create-employee .create-employee--submit,
+.create-employee .input-element {
   width: 200px;
   height: 40px;
   font-size: 15px;
-  margin-bottom: 15px;
   border-radius: 5px;
   border: 2px solid #564949;
 }
 .create-employee .create-employee--submit {
   align-self: center;
+  cursor: pointer;
+  width: 100px;
+}
+.create-employee .create-employee--submit:hover {
+  opacity: 0.8;
 }
 .create-employee .date-picker {
   display: flex;
@@ -97,6 +101,11 @@ header a {
 }
 .create-employee .date-picker .name-day-week {
   background-color: #564949;
+}
+.create-employee .error-form {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 13px;
 }
 
 .link-to-home {
@@ -109,7 +118,36 @@ header a {
   display: flex;
   justify-content: center;
   width: 200px;
-  margin: 15px auto 20px auto;
+  margin: 60px auto 20px auto;
+}
+
+.data-table {
+  display: flex;
+  justify-content: center;
+}
+.data-table .data-table--header {
+  display: flex;
+  justify-content: space-between;
+}
+.data-table .data-table--header .select-entries-container {
+  display: flex;
+  align-items: center;
+}
+.data-table .data-table--header .select-entries-container > * {
+  padding: 5px;
+}
+.data-table .data-table--header input {
+  margin: 5px;
+  border: 1px solid #564949;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px;
+}
+.data-table .data-table--header input::placeholder {
+  font-size: 15px;
+}
+.data-table .data-table--header input:focus {
+  outline: 1px solid #564949;
 }
 
 /*# sourceMappingURL=style.css.map */

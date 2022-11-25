@@ -21,11 +21,11 @@
 
   .input-form {
     width: 200px;
-    height: 40px;
+    height: 34px;
     font-size: 15px;
-    margin-bottom: 15px;
     border-radius: 5px;
     border: 2px solid #564949;
+    padding: 5px;
   }
 
   label {
@@ -34,7 +34,6 @@
 
   .create-employee--select {
     width: 200px;
-    margin-bottom: 15px;
   }
 
   .create-employee--container-one,
@@ -46,32 +45,41 @@
     margin-bottom: 10px;
   }
 
-  .create-employee--submit, #input-calendar {
+  .create-employee--submit,
+  .input-element {
     width: 200px;
     height: 40px;
     font-size: 15px;
-    margin-bottom: 15px;
     border-radius: 5px;
     border: 2px solid #564949;
   }
 
-  .create-employee--submit{
+  .create-employee--submit {
     align-self: center;
+    cursor: pointer;
+    width: 100px;
   }
 
-  .date-picker{
+  .create-employee--submit:hover {
+    opacity: 0.8;
+  }
+
+  .date-picker {
     display: flex;
     flex-direction: column;
 
-    .calendar{
+    .calendar {
       top: 60px;
     }
 
-    .name-day-week{
+    .name-day-week {
       background-color: #564949;
     }
   }
+
+  .error-form {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
 }
-
-
-

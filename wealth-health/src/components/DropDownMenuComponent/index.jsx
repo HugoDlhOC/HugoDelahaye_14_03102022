@@ -14,6 +14,7 @@ const DropDownMenuComponent = ({ data }) => {
   data.forEach((item) => {
     options.push(item.name);
   });
+
   return (
     <div>
       <Select
