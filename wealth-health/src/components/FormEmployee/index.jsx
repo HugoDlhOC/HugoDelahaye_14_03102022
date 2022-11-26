@@ -22,12 +22,12 @@ const FormEmployee = () => {
     dateOfBirth: Yup.string(),
     startDate: Yup.string(),
     street: Yup.string().required("Street required"),
-    state: Yup.string().required("State required"),
+    state: Yup.string(),
     city: Yup.string().required("City required"),
     zipCode: Yup.number()
       .min(1, "Too Short! Minimum 1")
       .required("Zip code required"),
-    department: Yup.string().required("Department required"),
+    department: Yup.string(),
   });
 
   const formik = useFormik({
@@ -60,8 +60,6 @@ const FormEmployee = () => {
         },
       });
       resetForm();
-      console.log(valueDateOfBirth);
-      console.log(valueStartDate);
     },
   });
 
@@ -99,8 +97,8 @@ const FormEmployee = () => {
 
           <Calendar
             languageChoice={"fr"}
-            yearMin={2001}
-            yearMax={2030}
+            yearMin={1922}
+            yearMax={2022}
             returnFormat={"MM/dd/yyyy"}
             defaultDate={new Date()}
             labelContent={"Date of Birth"}
@@ -113,8 +111,8 @@ const FormEmployee = () => {
           ) : null}
           <Calendar
             languageChoice={"fr"}
-            yearMin={2001}
-            yearMax={2030}
+            yearMin={2000}
+            yearMax={2022}
             returnFormat={"MM/dd/yyyy"}
             defaultDate={new Date()}
             labelContent={"Start Date"}
