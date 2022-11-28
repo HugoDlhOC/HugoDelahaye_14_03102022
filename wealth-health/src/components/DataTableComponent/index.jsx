@@ -1,18 +1,18 @@
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import { useEffect, useMemo, useState } from "react";
 import ShowEntriesSelect from "../ShowEntriesSelect";
+import { useSelector } from "react-redux";
 
 /**
  * This component represents the table where user data is displayed
  * @returns JSX
  */
 const DataTableComponent = () => {
-  const { users } = useContext(UserContext);
   const dateTable = [];
+  const users = useSelector((state) => state.employees);
+
   users.map((item) => {
     dateTable.push({
       firstName: item.firstName,
@@ -22,7 +22,7 @@ const DataTableComponent = () => {
       dateOfBirth: item.dateOfBirth,
       street: item.street,
       city: item.city,
-      state: item.state,
+      state: item.stateCountry,
       zipCode: item.zipCode,
     });
   });
@@ -74,7 +74,7 @@ const DataTableComponent = () => {
   }, []);
 
   const [columnDefs, setColumnDefs] = useState([
-    { field: "firstName", width: 150, },
+    { field: "firstName", width: 150 },
     { field: "lastName", width: 150 },
     { field: "startDate", comparator: dateComparator, width: 120 },
     { field: "department", width: 160 },

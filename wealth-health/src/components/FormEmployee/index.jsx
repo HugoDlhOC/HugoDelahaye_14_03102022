@@ -2,17 +2,18 @@ import { useFormik } from "formik";
 import states from "../../data/states";
 import departments from "../../data/departments";
 import ModalComponent from "../ModalComponent";
-import { useContext, useState } from "react";
-import { UserContext } from "../../context/UserContext";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
 import "@hugo.delahaye53/react-datepicker/dist/esm/styles/style.css";
 import { Calendar } from "@hugo.delahaye53/react-datepicker";
 import { styleSelect, themeSelect } from "../../services/themeStyleSelect";
 import * as Yup from "yup";
+import { addEmployee } from "../../feature/userSlice";
 
 const FormEmployee = () => {
   const [modal, setModal] = useState(false);
-  const { dispatch } = useContext(UserContext);
+  const dispatch = useDispatch();
   const [valueDateOfBirth, setValueDateOfBirth] = useState("");
   const [valueStartDate, setValueStartDate] = useState("");
 
@@ -45,20 +46,20 @@ const FormEmployee = () => {
     validationSchema: AddUserSchema,
     onSubmit: (values, { resetForm }) => {
       setModal(true);
-      dispatch({
-        type: "ADD_EMPLOYEE",
-        user: {
+
+      dispatch(
+        addEmployee({
           firstName: values.firstName,
           lastName: values.lastName,
           dateOfBirth: valueDateOfBirth,
           startDate: valueStartDate,
           street: values.street,
-          state: values.state,
+          stateCountry: values.state,
           city: values.city,
           zipCode: values.zipCode,
           department: values.department,
-        },
-      });
+        })
+      );
       resetForm();
     },
   });
@@ -98,7 +99,7 @@ const FormEmployee = () => {
           <Calendar
             languageChoice={"fr"}
             yearMin={1922}
-            yearMax={2022}
+            yearMax={2030}
             returnFormat={"MM/dd/yyyy"}
             defaultDate={new Date()}
             labelContent={"Date of Birth"}
@@ -112,7 +113,7 @@ const FormEmployee = () => {
           <Calendar
             languageChoice={"fr"}
             yearMin={2000}
-            yearMax={2022}
+            yearMax={2030}
             returnFormat={"MM/dd/yyyy"}
             defaultDate={new Date()}
             labelContent={"Start Date"}

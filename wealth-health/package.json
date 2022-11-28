@@ -8,6 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@hugo.delahaye53/react-datepicker": "^1.0.3",
+    "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,9 +21,12 @@
     "react-dom": "^18.2.0",
     "react-dropdown": "^1.11.0",
     "react-pure-modal": "^2.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-select": "^5.4.0",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
     "sass": "^1.55.0",
     "serve": "^14.1.2",
     "typescript": "^4.8.4",
@@ -55,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@redux-devtools/core": "^3.13.1",
     "prettier": "2.7.1"
   }
 }
